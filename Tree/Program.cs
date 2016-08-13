@@ -125,8 +125,8 @@ namespace Tree
                 Item<string> root = new Item<string>();
                 _parts = Regex.Split(input, string.Format(@"({0}|\{1}|\{2})", _delimiter, _left, _right))
                     .Where(s => Regex.IsMatch(s, string.Format(@"(\w+|\{0}|\{1})", _left, _right)))
-                    .Select(s => s.Trim())
-                    .ToList();
+                    .Select(s => s.Trim());
+ 
 
                 if (!_parts.Any() )
                     throw new ApplicationException("No items found in the input string!");
